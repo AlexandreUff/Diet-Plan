@@ -2,6 +2,7 @@ import React from 'react';
 import CardInfo from './components/CardInfo';
 /* import './App.css'; */
 import { GitHubIco, InstagramIco, LinkedInIco, MainIco } from './components/Icons';
+import InputStyled from './components/inputStyled';
 
 export default function App(){
   return (
@@ -17,11 +18,12 @@ export default function App(){
             buttonsType="confirm"
             buttonText="COMEÇAR"
           >
-            <p>
+            {/* <p>
               Aqui você poderá descobrir com detalhes qual é a sua taxa de matabolismo basal e 
               qual o consumo ideal de macronutrientes indicados para seu objetivo, seja 
               emagracimento ou hipertrofia muscular.
-            </p>
+            </p> */}
+            <InputStyled title=" Kg" placeholder="Digite seu peso em Kg" />
           </CardInfo>
         </main>
         

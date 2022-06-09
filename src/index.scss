@@ -51,10 +51,9 @@ $fourthColor: #BAFFB4;
             align-items: center;
                 
                 .card-ground{
-                    /* margin: 0px auto; */
                     background-color: #ffffff1a;
                     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.464);
-                    width: 50%;
+                    width: 40%;
                     font-size: 3rem;
                     padding: 15px;
                     border-radius: 15px;
@@ -104,6 +103,8 @@ $fourthColor: #BAFFB4;
             letter-spacing: 1px;
             font-family: 'Roboto Condensed', sans-serif;
             font-size: 2rem;
+
+            box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.504);
             
 
             ul{
