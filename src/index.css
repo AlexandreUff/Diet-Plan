@@ -29,6 +29,9 @@
   width: 150px;
   margin-right: 25px;
   /* text-shadow: 5px 5px 5px black; */
+  animation-name: grow-decrease;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 .main-background .background-effect header h1 {
   font-size: 15rem;
@@ -139,6 +142,12 @@
   .main-background .background-effect header h1 {
     font-size: 5rem;
     text-shadow: 5px 5px 5px black;
+  }
+}
+@keyframes grow-decrease {
+  to {
+    transform: scale(1.2);
+    opacity: 0.8;
   }
 }
 
