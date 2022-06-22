@@ -12,13 +12,19 @@ export default function InputStyled(props){
     } */
 
     return (
-            <input
-                type="text"
-                name={`inputStyled-${props.title}`}
-                id={`inputStyled-${props.title}`}
-                placeholder={props.placeholder}
-                value={val}
-                onChange={e => useVal(e.target.value)}
-            />
+        <label>
+            Digite seu peso em kg
+            <div>
+                <input
+                    type="text"
+                    name={`inputStyled-${props.title}`}
+                    id={`inputStyled-${props.title}`}
+                    placeholder={props.placeholder}
+                    value={val}
+                    onChange={e => useVal(e.target.value)}
+                />
+                {props.title}
+            </div>
+        </label>
         )
 }

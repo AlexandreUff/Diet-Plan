@@ -23,7 +23,7 @@ export default function App(){
               qual o consumo ideal de macronutrientes indicados para seu objetivo, seja 
               emagracimento ou hipertrofia muscular.
             </p> */}
-            <InputStyled title=" Kg" placeholder="Digite seu peso em Kg" />
+            <InputStyled title=" Kg" placeholder="Ex.: 85.4" />
           </CardInfo>
         </main>
         
