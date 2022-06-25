@@ -211,6 +211,7 @@ $fourthColor: #BAFFB4;
         .background-effect{
             header{
                 padding: 0px 10px;
+                justify-content: center;
 
                 svg {
                     width: 50px;
@@ -222,6 +223,21 @@ $fourthColor: #BAFFB4;
                     text-shadow: 5px 5px 5px black;
                 }
             }
+
+            main {
+                .card-ground{
+                    width: 100%;
+                    border-radius: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:400px){
+    main {
+        .card-ground{
+            
         }
     }
 }

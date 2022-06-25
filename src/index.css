@@ -153,6 +153,7 @@
 @media (max-width: 620px) {
   .main-background .background-effect header {
     padding: 0px 10px;
+    justify-content: center;
   }
   .main-background .background-effect header svg {
     width: 50px;
@@ -161,6 +162,10 @@
   .main-background .background-effect header h1 {
     font-size: 5rem;
     text-shadow: 5px 5px 5px black;
+  }
+  .main-background .background-effect main .card-ground {
+    width: 100%;
+    border-radius: 0px;
   }
 }
 @keyframes grow-decrease {
