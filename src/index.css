@@ -58,17 +58,17 @@
   overflow: hidden;
 }
 .main-background .background-effect main .card-ground .form-content {
-  display: flex;
+  display: grid;
   position: absolute;
   transition: 1s;
   background-color: rgba(255, 0, 0, 0.138);
   border-top: 1px solid wheat;
-  width: 300%;
+  /* width: 300%; */
 }
 .main-background .background-effect main .card-ground .form-content .form-area {
   border-right: 1px solid red;
   background-color: #28a745;
-  width: 33.3%;
+  /* width: 33.3%; */
 }
 .main-background .background-effect main .card-ground h2 {
   text-align: center;

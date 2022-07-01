@@ -36,7 +36,26 @@ export default function App(){
               </FormArea>
 
               <FormArea>
-                <label>
+                <label pr="Fois">
+                  Digite seu peso em kg
+                  <div>
+                      <input
+                          type="Digite seu peso em Kg"
+                          name={`inputStyled`}
+                          id={`inputStyled`}
+                          placeholder={"Ex.: 84.5 Kg"}
+                          value={""}
+                      />
+                      {"Kg"}
+                  </div>
+                </label>
+                <div>
+                  <button onClick={() => moveContent("back")}> {"<<"} </button>
+                  <button onClick={() => moveContent("next")}> {">>"} </button>
+                </div>
+              </FormArea>
+              <FormArea>
+                <label pr="Fois">
                   Digite seu peso em kg
                   <div>
                       <input
