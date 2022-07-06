@@ -110,6 +110,10 @@ $fourthColor: #BAFFB4;
                                 transform: scale(1.2);
                                 z-index: 2;
                             }
+
+                        svg {
+                            width: 30px;
+                        }
                     }
 
                     label {

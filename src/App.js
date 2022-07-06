@@ -1,20 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CardData from './components/CardData';
 import FormArea from './components/FormArea';
 /* import './App.css'; */
 import { GitHubIco, InstagramIco, LinkedInIco, MainIco } from './components/Icons';
 
 export default function App(){
-
-  const [posit,usePosit] = useState(0);
-
-  function moveContent(direction){
-    if(direction === "next"){
-      usePosit(posit-1);
-    } else if (direction === "back") {
-      usePosit(posit+1);
-    }
-  }
 
   return (
     <div className='main-background'>
@@ -24,7 +14,7 @@ export default function App(){
         </header>
 
         <main>
-          <CardData contentPosition={posit}>
+          <CardData>
               <FormArea>
                 <h2>Olá! Seja muito bem-vindo!</h2>
                 <p>
@@ -32,11 +22,22 @@ export default function App(){
                   qual o consumo ideal de macronutrientes indicados para seu objetivo, seja 
                   emagracimento ou hipertrofia muscular.
                 </p>
-                <button onClick={() => moveContent("next")}>COMEÇAR</button>
               </FormArea>
-
               <FormArea>
-                <label pr="Fois">
+                  Digite seu peso em kg
+                  <div>
+                      <input
+                          type="Digite seu peso em Kg"
+                          name={`inputStyled`}
+                          id={`inputStyled`}
+                          placeholder={"Ex.: 84.5 Kg"}
+                          value={""}
+                      />
+                      {"Kg"}
+                  </div>
+              </FormArea>
+              <FormArea>
+                <label>
                   Digite seu peso em kg
                   <div>
                       <input
@@ -49,29 +50,6 @@ export default function App(){
                       {"Kg"}
                   </div>
                 </label>
-                <div>
-                  <button onClick={() => moveContent("back")}> {"<<"} </button>
-                  <button onClick={() => moveContent("next")}> {">>"} </button>
-                </div>
-              </FormArea>
-              <FormArea>
-                <label pr="Fois">
-                  Digite seu peso em kg
-                  <div>
-                      <input
-                          type="Digite seu peso em Kg"
-                          name={`inputStyled`}
-                          id={`inputStyled`}
-                          placeholder={"Ex.: 84.5 Kg"}
-                          value={""}
-                      />
-                      {"Kg"}
-                  </div>
-                </label>
-                <div>
-                  <button onClick={() => moveContent("back")}> {"<<"} </button>
-                  <button onClick={() => moveContent("next")}> {">>"} </button>
-                </div>
               </FormArea>
           </CardData>
         </main>

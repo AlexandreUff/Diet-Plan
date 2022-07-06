@@ -1,4 +1,5 @@
 import react, { useState } from "react";
+import { ArrowBackIcon, ArrowNextIcon } from "./Icons";
 
 export default function CardData(props){
 
@@ -32,8 +33,8 @@ export default function CardData(props){
                 left:"calc(50% - 177px)"
                 }}
                 >
-                    {"Voltar"}
-                </button>
+                   <><ArrowBackIcon/> {"Voltar"}</>
+            </button>
             <button onClick={() => moveContent("next")} style={{
                 position:"absolute",
                 /* width: "180px", */
@@ -41,7 +42,7 @@ export default function CardData(props){
                 left: posit >= -1 ? "calc(50% - 91px)" : "50%"
             }}
             >
-                {posit === 0 ? "COMEÇAR" : "Avançar"}
+                {posit === 0 ? "COMEÇAR" : <>Avançar <ArrowNextIcon/></>}
             </button>
         </div>
     )

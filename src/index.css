@@ -90,6 +90,9 @@
   transform: scale(1.2);
   z-index: 2;
 }
+.main-background .background-effect main .card-ground button svg {
+  width: 30px;
+}
 .main-background .background-effect main .card-ground label {
   text-align: center;
 }
