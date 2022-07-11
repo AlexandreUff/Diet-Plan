@@ -24,7 +24,8 @@ export default function App(){
                 </p>
               </FormArea>
               <FormArea>
-                  Digite seu peso em kg
+                <h2>Digite seu peso em kg</h2>
+                <label>
                   <div>
                       <input
                           type="Digite seu peso em Kg"
@@ -35,10 +36,11 @@ export default function App(){
                       />
                       {"Kg"}
                   </div>
+                </label>
               </FormArea>
               <FormArea>
+                <h2>Digite seu peso em kg</h2>
                 <label>
-                  Digite seu peso em kg
                   <div>
                       <input
                           type="Digite seu peso em Kg"
