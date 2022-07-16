@@ -26,7 +26,7 @@ export default function App(){
               <FormArea>
                 <h2>Digite seu peso em kg</h2>
                 <label>
-                  <div>
+                  <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
                           type="Digite seu peso em Kg"
                           name={`inputStyled`}
@@ -39,9 +39,9 @@ export default function App(){
                 </label>
               </FormArea>
               <FormArea>
-                <h2>Digite seu peso em kg</h2>
+              <h2>Digite seu peso em kg</h2>
                 <label>
-                  <div>
+                  <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
                           type="Digite seu peso em Kg"
                           name={`inputStyled`}
