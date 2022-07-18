@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardData from './components/CardData';
 import FormArea from './components/FormArea';
 /* import './App.css'; */
 import { GitHubIco, InstagramIco, LinkedInIco, MainIco } from './components/Icons';
 
 export default function App(){
+
+  const [peso,setPeso] = useState(null);
+  const [estatura,setEstatura] = useState(null);
+  const [idade,setIdade] = useState(null);
 
   return (
     <div className='main-background'>
@@ -28,28 +32,60 @@ export default function App(){
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
+                          onChange={e => setPeso(e.value)}
                           type="Digite seu peso em Kg"
                           name={`inputStyled`}
                           id={`inputStyled`}
-                          placeholder={"Ex.: 84.5 Kg"}
-                          value={""}
+                          placeholder={"Ex.: 70.5 Kg"}
+                          value={peso}
                       />
                       {"Kg"}
                   </div>
                 </label>
               </FormArea>
               <FormArea>
-              <h2>Digite seu peso em kg</h2>
+              <h2>Digite sua estatura em centímetros (cm)</h2>
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
-                          type="Digite seu peso em Kg"
+                          onChange={e => setEstatura(e.value)}
+                          type="Digite sua estatura"
                           name={`inputStyled`}
                           id={`inputStyled`}
-                          placeholder={"Ex.: 84.5 Kg"}
-                          value={""}
+                          placeholder={"Ex.: 185 cm"}
+                          value={estatura}
                       />
-                      {"Kg"}
+                      {"cm"}
+                  </div>
+                </label>
+              </FormArea>
+              <FormArea>
+              <h2>Digite sua idade</h2>
+                <label>
+                  <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
+                      <input
+                          onChange={e => setIdade(e.value)}
+                          type="Digite sua estatura"
+                          name={`inputStyled`}
+                          id={`inputStyled`}
+                          placeholder={"Ex.: 25 anos"}
+                          value={idade}
+                      />
+                      {"ano(s)"}
+                  </div>
+                </label>
+              </FormArea>
+              <FormArea>
+              <h2>Digite seu nível de atividade</h2>
+                <label>
+                  <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
+                      <select name='activit' id='activit'>
+                        <option value={"nad"}>Sedentário (Nenhum ou pouco exercício)</option>
+                        <option value={"lev"}>Levemente ativo (1 a 3 dias de exercício por semana)</option>
+                        <option value={"mod"}>Moderadamente ativo (3 a 5 dias de exercício por semana)</option>
+                        <option value={"alt"}>Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option>
+                        <option value={"ext"}>Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)</option>
+                      </select>
                   </div>
                 </label>
               </FormArea>
