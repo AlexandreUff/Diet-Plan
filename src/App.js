@@ -33,7 +33,7 @@ export default function App(){
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
                           onChange={e => setPeso(e.value)}
-                          type="Digite seu peso em Kg"
+                          type="text"
                           name={`inputStyled`}
                           id={`inputStyled`}
                           placeholder={"Ex.: 70.5 Kg"}
@@ -49,7 +49,7 @@ export default function App(){
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
                           onChange={e => setEstatura(e.value)}
-                          type="Digite sua estatura"
+                          type="text"
                           name={`inputStyled`}
                           id={`inputStyled`}
                           placeholder={"Ex.: 185 cm"}
@@ -65,7 +65,7 @@ export default function App(){
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
                           onChange={e => setIdade(e.value)}
-                          type="Digite sua estatura"
+                          type="text"
                           name={`inputStyled`}
                           id={`inputStyled`}
                           placeholder={"Ex.: 25 anos"}
@@ -79,7 +79,7 @@ export default function App(){
               <h2>Digite seu nível de atividade</h2>
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
-                      <select name='activit' id='activit'>
+                      <select name='inputStyled' id='activit'>
                         <option value={"nad"}>Sedentário (Nenhum ou pouco exercício)</option>
                         <option value={"lev"}>Levemente ativo (1 a 3 dias de exercício por semana)</option>
                         <option value={"mod"}>Moderadamente ativo (3 a 5 dias de exercício por semana)</option>

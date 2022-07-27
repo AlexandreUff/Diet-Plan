@@ -5,12 +5,19 @@ export default function CardData(props){
 
     const [posit,usePosit] = useState(0);
 
-    function moveContent(direction){
+    function moveContent(direction){     
+
         if(direction === "next"){
-          usePosit(posit-1);
+            usePosit(posit-1);
         } else if (direction === "back") {
-          usePosit(posit+1);
+            usePosit(posit+1);
         }
+
+        const inputFocus = document.getElementsByName("inputStyled");
+
+        console.log(inputFocus)
+        console.log(posit*(-1))
+
       }
 
     console.log(props.children[1].props.children[0]["pr"])
