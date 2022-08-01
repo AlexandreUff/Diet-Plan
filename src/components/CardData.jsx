@@ -1,22 +1,37 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import { ArrowBackIcon, ArrowNextIcon } from "./Icons";
 
 export default function CardData(props){
 
     const [posit,usePosit] = useState(0);
+    
+    const inputFocus = document.getElementsByName("inputStyled");
+    
+    useEffect(()=>{
+        console.log("Posição atual: ",posit*(-1) - 1);
 
+        if(posit >= -1){
+           console.log("Elemento: ",inputFocus[posit*(-1)]);
+        }
+    },[posit]);
+
+    
     function moveContent(direction){     
-
+        
+        console.log("Início:",posit)
+        
         if(direction === "next"){
             usePosit(posit-1);
+            console.log("Avançou");
         } else if (direction === "back") {
             usePosit(posit+1);
+            console.log("Voltou");
         }
 
         const inputFocus = document.getElementsByName("inputStyled");
 
         console.log(inputFocus)
-        console.log(posit*(-1))
+        console.log("Depois:",posit)
 
       }
 
@@ -33,8 +48,7 @@ export default function CardData(props){
                 {props.children}
             </div>
             <button onClick={() => moveContent("back")} style={{
-                display: posit >= -1 ? "none" : "inline",
-                /* width: "145px", */
+                display: posit < -1 ? "inline" : "none",
                 position:"absolute",
                 bottom:"0px",
                 left:"calc(50% - 177px)"
@@ -44,7 +58,6 @@ export default function CardData(props){
             </button>
             <button onClick={() => moveContent("next")} style={{
                 position:"absolute",
-                /* width: "180px", */
                 bottom:"0px",
                 left: posit >= -1 ? "calc(50% - 91px)" : "50%"
             }}
