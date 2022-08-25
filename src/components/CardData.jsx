@@ -1,14 +1,16 @@
 import react, { useEffect, useState } from "react";
 import { ArrowBackIcon, ArrowNextIcon } from "./Icons";
 
+const inputFocus = document.querySelectorAll("[inputStyled]");
+
 export default function CardData(props){
 
     const [posit,usePosit] = useState(0);
     
-    const inputFocus = document.getElementsByName("inputStyled");
     
     useEffect(()=>{
-        console.log("Posição atual: ",posit*(-1) - 1);
+        /* console.log("Posição atual: ",posit*(-1) - 1);
+        console.log("[Elementos:] ",inputFocus); */
 
         if(posit >= -1){
            console.log("Elemento: ",inputFocus[posit*(-1)]);
@@ -18,20 +20,27 @@ export default function CardData(props){
     
     function moveContent(direction){     
         
-        console.log("Início:",posit)
+        /* console.log("Início:",posit) */
         
         if(direction === "next"){
-            usePosit(posit-1);
+            usePosit(posit - 1);
+            /* usePosit((prevPosit) => prevPosit-1); */
             console.log("Avançou");
+            console.log(posit);
         } else if (direction === "back") {
             usePosit(posit+1);
+            /* usePosit((prevPosit) => prevPosit + 1); */
             console.log("Voltou");
+            console.log(posit);
         }
 
         const inputFocus = document.getElementsByName("inputStyled");
 
-        console.log(inputFocus)
-        console.log("Depois:",posit)
+        /* console.log("Depois:",posit) */
+        
+        setTimeout(()=>{
+            console.log("TESTE:",inputFocus[posit*(-1)])
+        },600)
 
       }
 

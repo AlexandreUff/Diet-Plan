@@ -35,7 +35,6 @@ export default function App(){
                           onChange={e => setPeso(e.value)}
                           type="text"
                           name={`inputStyled`}
-                          id={`inputStyled`}
                           placeholder={"Ex.: 70.5 Kg"}
                           value={peso}
                       />
@@ -51,7 +50,6 @@ export default function App(){
                           onChange={e => setEstatura(e.value)}
                           type="text"
                           name={`inputStyled`}
-                          id={`inputStyled`}
                           placeholder={"Ex.: 185 cm"}
                           value={estatura}
                       />
@@ -67,7 +65,6 @@ export default function App(){
                           onChange={e => setIdade(e.value)}
                           type="text"
                           name={`inputStyled`}
-                          id={`inputStyled`}
                           placeholder={"Ex.: 25 anos"}
                           value={idade}
                       />
@@ -79,7 +76,7 @@ export default function App(){
               <h2>Digite seu nível de atividade</h2>
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
-                      <select name='inputStyled' id='activit'>
+                      <select name='inputStyled'>
                         <option value={"nad"}>Sedentário (Nenhum ou pouco exercício)</option>
                         <option value={"lev"}>Levemente ativo (1 a 3 dias de exercício por semana)</option>
                         <option value={"mod"}>Moderadamente ativo (3 a 5 dias de exercício por semana)</option>
