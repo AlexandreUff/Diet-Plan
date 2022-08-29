@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from "react";
-import { ArrowBackIcon, ArrowNextIcon } from "./Icons";
+import { ArrowBackIcon, ArrowNextIcon, CheckDoneIcon } from "./Icons";
 
 const inputFocus = document.querySelectorAll("[inputStyled]");
 
@@ -44,6 +44,16 @@ export default function CardData(props){
 
       }
 
+      function buttonName(cardSize){
+        if (cardSize-1 > posit*(-1)) {
+            console.log(cardSize,posit*(-1))
+            return <>Avançar <ArrowNextIcon/></>
+        } else {
+            console.log(cardSize,posit*(-1))
+            return <><CheckDoneIcon/> Finalizar</>
+        }
+      }
+
     console.log(props.children[1].props.children[0]["pr"])
     return (
         <div className='card-ground'>
@@ -71,7 +81,7 @@ export default function CardData(props){
                 left: posit >= -1 ? "calc(50% - 91px)" : "50%"
             }}
             >
-                {posit === 0 ? "COMEÇAR" : <>Avançar <ArrowNextIcon/></>}
+                {posit === 0 ? "COMEÇAR" : buttonName(props.children.length)}
             </button>
         </div>
     )
