@@ -6,53 +6,22 @@ const inputFocus = document.querySelectorAll("[inputStyled]");
 export default function CardData(props){
 
     const [posit,usePosit] = useState(0);
-    
-    
+
     useEffect(()=>{
-        /* console.log("Posição atual: ",posit*(-1) - 1);
-        console.log("[Elementos:] ",inputFocus); */
-
-        if(posit >= -1){
-           console.log("Elemento: ",inputFocus[posit*(-1)]);
-        }
+      console.log("O atual valor é",posit)
+      
+      const inputFocus = document.getElementsByName("inputStyled");
+      console.log("TESTE:",inputFocus[posit*(-1)-1])
     },[posit]);
-
-    
-    function moveContent(direction){     
-        
-        /* console.log("Início:",posit) */
-        
-        if(direction === "next"){
-            usePosit(posit - 1);
-            /* usePosit((prevPosit) => prevPosit-1); */
-            console.log("Avançou");
-            console.log(posit);
-        } else if (direction === "back") {
-            usePosit(posit+1);
-            /* usePosit((prevPosit) => prevPosit + 1); */
-            console.log("Voltou");
-            console.log(posit);
-        }
-
-        const inputFocus = document.getElementsByName("inputStyled");
-
-        /* console.log("Depois:",posit) */
-        
-        setTimeout(()=>{
-            console.log("TESTE:",inputFocus[posit*(-1)])
-        },600)
-
+    function buttonName(cardSize){
+      if (cardSize-1 > posit*(-1)) {
+          console.log(cardSize,posit*(-1))
+          return <>Avançar <ArrowNextIcon/></>
+      } else {
+          console.log(cardSize,posit*(-1))
+          return <><CheckDoneIcon/> Finalizar</>
       }
-
-      function buttonName(cardSize){
-        if (cardSize-1 > posit*(-1)) {
-            console.log(cardSize,posit*(-1))
-            return <>Avançar <ArrowNextIcon/></>
-        } else {
-            console.log(cardSize,posit*(-1))
-            return <><CheckDoneIcon/> Finalizar</>
-        }
-      }
+    }
 
     console.log(props.children[1].props.children[0]["pr"])
     return (
@@ -66,7 +35,7 @@ export default function CardData(props){
                 }>
                 {props.children}
             </div>
-            <button onClick={() => moveContent("back")} style={{
+            <button onClick={() => usePosit(posit+1)} style={{
                 display: posit < -1 ? "inline" : "none",
                 position:"absolute",
                 bottom:"0px",
@@ -75,7 +44,7 @@ export default function CardData(props){
                 >
                    <><ArrowBackIcon/> {"Voltar"}</>
             </button>
-            <button onClick={() => moveContent("next")} style={{
+            <button onClick={() => usePosit(posit-1)} style={{
                 position:"absolute",
                 bottom:"0px",
                 left: posit >= -1 ? "calc(50% - 91px)" : "50%"
