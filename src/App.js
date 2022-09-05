@@ -73,7 +73,7 @@ export default function App(){
                 </label>
               </FormArea>
               <FormArea>
-              <h2>Digite seu nível de atividade</h2>
+              <h2>Selecione seu nível de atividade</h2>
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <select name='inputStyled'>
@@ -85,6 +85,17 @@ export default function App(){
                       </select>
                   </div>
                 </label>
+              </FormArea>
+              <FormArea>
+              <h2>Marque a opção que corresponda a seu sexo:</h2>
+                  <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center', justifyContent:'space-evenly', borderTop: '1px solid gray'}}>
+                    <label>
+                      <input type={"radio"} name={`inputStyled`} id='M' value={"M"} style={{marginRight:'10px'}} />Masculino
+                    </label>
+                    <label>
+                      <input type={"radio"} name={`inputStyled`} id='F' value={"F"} style={{marginRight:'10px'}} />Feminino
+                    </label>
+                  </div>
               </FormArea>
           </CardData>
         </main>
