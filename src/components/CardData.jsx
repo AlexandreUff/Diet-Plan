@@ -10,9 +10,14 @@ export default function CardData(props){
     useEffect(()=>{
       console.log("O atual valor é",posit)
       
-      const inputFocus = document.getElementsByName("inputStyled");
+      const inputFocus = document.getElementsByClassName("inputStyled");
       console.log("TESTE:",inputFocus[posit*(-1)-1])
+
+      setTimeout(()=>{
+        inputFocus[posit*(-1)-1].focus();
+      },1000)
     },[posit]);
+
     function buttonName(cardSize){
       if (cardSize-1 > posit*(-1)) {
           console.log(cardSize,posit*(-1))

@@ -34,7 +34,7 @@ export default function App(){
                       <input
                           onChange={e => setPeso(e.value)}
                           type="text"
-                          name={`inputStyled`}
+                          className={`inputStyled`}
                           placeholder={"Ex.: 70.5 Kg"}
                           value={peso}
                       />
@@ -49,7 +49,7 @@ export default function App(){
                       <input
                           onChange={e => setEstatura(e.value)}
                           type="text"
-                          name={`inputStyled`}
+                          className={`inputStyled`}
                           placeholder={"Ex.: 185 cm"}
                           value={estatura}
                       />
@@ -64,7 +64,7 @@ export default function App(){
                       <input
                           onChange={e => setIdade(e.value)}
                           type="text"
-                          name={`inputStyled`}
+                          className={`inputStyled`}
                           placeholder={"Ex.: 25 anos"}
                           value={idade}
                       />
@@ -76,7 +76,7 @@ export default function App(){
               <h2>Selecione seu nível de atividade</h2>
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
-                      <select name='inputStyled'>
+                      <select className={'inputStyled'}>
                         <option value={"nad"}>Sedentário (Nenhum ou pouco exercício)</option>
                         <option value={"lev"}>Levemente ativo (1 a 3 dias de exercício por semana)</option>
                         <option value={"mod"}>Moderadamente ativo (3 a 5 dias de exercício por semana)</option>
@@ -90,10 +90,21 @@ export default function App(){
               <h2>Marque a opção que corresponda a seu sexo:</h2>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center', justifyContent:'space-evenly', borderTop: '1px solid gray'}}>
                     <label>
-                      <input type={"radio"} name={`inputStyled`} id='M' value={"M"} style={{marginRight:'10px'}} />Masculino
+                      <input type={"radio"} name="sexo" className={`inputStyled`} id='M' value={"M"} style={{marginRight:'10px'}} />Masculino
                     </label>
                     <label>
-                      <input type={"radio"} name={`inputStyled`} id='F' value={"F"} style={{marginRight:'10px'}} />Feminino
+                      <input type={"radio"} name="sexo" className={`inputStyled`} id='F' value={"F"} style={{marginRight:'10px'}} />Feminino
+                    </label>
+                  </div>
+              </FormArea>
+              <FormArea>
+              <h2>Por fim, qual o seu objetivo:</h2>
+                  <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center', justifyContent:'space-evenly', borderTop: '1px solid gray'}}>
+                    <label>
+                      <input type={"radio"} name="objetivo" className={`inputStyled`} id='M' value={"M"} style={{marginRight:'10px'}} />Hipertrofia
+                    </label>
+                    <label>
+                      <input type={"radio"} name="objetivo" className={`inputStyled`} id='F' value={"F"} style={{marginRight:'10px'}} />Emagracimento
                     </label>
                   </div>
               </FormArea>
