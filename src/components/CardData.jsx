@@ -11,7 +11,13 @@ export default function CardData(props){
       console.log("O atual valor é",posit)
       
       const inputFocus = document.getElementsByClassName("inputStyled");
-      console.log("TESTE:",inputFocus[posit*(-1)-1])
+      console.log("TESTE:",inputFocus[posit*(-1)-1]) //DELETAR DEPOIS
+
+      inputFocus[posit*(-1)].addEventListener("keydown",(keyAction)=>{
+        if(keyAction.key === 'Tab'){
+            keyAction.preventDefault()
+        }
+      })
 
       setTimeout(()=>{
         inputFocus[posit*(-1)-1].focus();
