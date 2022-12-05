@@ -1,5 +1,6 @@
 import react, { useEffect, useState } from "react";
 import { ArrowBackIcon, ArrowNextIcon, CheckDoneIcon } from "./Icons";
+import Result from "../services/result";
 
 const inputFocus = document.querySelectorAll("[inputStyled]");
 
@@ -8,10 +9,7 @@ export default function CardData(props){
     const [posit,usePosit] = useState(0);
 
     useEffect(()=>{
-      console.log("O atual valor é",posit)
-      
       const inputFocus = document.getElementsByClassName("inputStyled");
-      console.log("TESTE:",inputFocus[posit*(-1)-1]) //DELETAR DEPOIS
 
       inputFocus[posit*(-1)].addEventListener("keydown",(keyAction)=>{
         if(keyAction.key === 'Tab'){
@@ -26,15 +24,41 @@ export default function CardData(props){
 
     function buttonName(cardSize){
       if (cardSize-1 > posit*(-1)) {
-          console.log(cardSize,posit*(-1))
           return <>Avançar <ArrowNextIcon/></>
       } else {
-          console.log(cardSize,posit*(-1))
           return <><CheckDoneIcon/> Finalizar</>
       }
     }
 
-    console.log(props.children[1].props.children[0]["pr"])
+    async function finalization(cardSize){
+        const peso = document.getElementById("peso");
+        const estatura = document.getElementById("estatura");
+        const idade = document.getElementById("idade");
+        const atividade = document.getElementById("atividade");
+        const sexo = document.getElementsByName("sexo");
+        const objetivo = document.getElementsByName("objetivo");
+
+        Result(peso,estatura, idade, atividade, sexo, objetivo)
+
+        /* console.log("Peso",peso.value);
+        console.log("estatura",estatura.value);
+        console.log("idade",idade.value);
+        console.log("atividade",atividade.value);
+
+        for(let i=0;i<=sexo.length;i++){
+            if(sexo[i].checked === true){
+                console.log("sexo",sexo[i].value);
+            }
+        }
+
+        for(let j=0;j<=objetivo.length;j++){
+            if(objetivo[j].checked === true){
+                console.log("objetivo",objetivo[j].value);
+            }
+        } */
+
+      }
+
     return (
         <div className='card-ground'>
             <div className='form-content' style={
@@ -55,7 +79,7 @@ export default function CardData(props){
                 >
                    <><ArrowBackIcon/> {"Voltar"}</>
             </button>
-            <button onClick={() => usePosit(posit-1)} style={{
+            <button onClick={props.children.length === posit*(-1) ? finalization() : () => usePosit(posit-1)} style={{
                 position:"absolute",
                 bottom:"0px",
                 left: posit >= -1 ? "calc(50% - 91px)" : "50%"

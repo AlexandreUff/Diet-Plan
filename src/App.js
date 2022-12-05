@@ -32,6 +32,7 @@ export default function App(){
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
+                          id="peso"
                           onChange={e => setPeso(e.value)}
                           type="text"
                           className={`inputStyled`}
@@ -47,6 +48,7 @@ export default function App(){
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
+                          id="estatura"
                           onChange={e => setEstatura(e.value)}
                           type="text"
                           className={`inputStyled`}
@@ -62,6 +64,7 @@ export default function App(){
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
                       <input
+                          id="idade"
                           onChange={e => setIdade(e.value)}
                           type="text"
                           className={`inputStyled`}
@@ -76,7 +79,7 @@ export default function App(){
               <h2>Selecione seu nível de atividade</h2>
                 <label>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center'}}>
-                      <select className={'inputStyled'}>
+                      <select className={'inputStyled'} id="atividade">
                         <option value={"nad"}>Sedentário (Nenhum ou pouco exercício)</option>
                         <option value={"lev"}>Levemente ativo (1 a 3 dias de exercício por semana)</option>
                         <option value={"mod"}>Moderadamente ativo (3 a 5 dias de exercício por semana)</option>
@@ -101,10 +104,10 @@ export default function App(){
               <h2>Por fim, qual o seu objetivo:</h2>
                   <div style={{height: '70%',display:'flex',justifyContent:'center', alignItems:'center', justifyContent:'space-evenly', borderTop: '1px solid gray'}}>
                     <label>
-                      <input type={"radio"} name="objetivo" className={`inputStyled`} id='M' value={"M"} style={{marginRight:'10px'}} />Hipertrofia
+                      <input type={"radio"} name="objetivo" className={`inputStyled`} id='H' value={"H"} style={{marginRight:'10px'}} />Hipertrofia
                     </label>
                     <label>
-                      <input type={"radio"} name="objetivo" className={`inputStyled`} id='F' value={"F"} style={{marginRight:'10px'}} />Emagracimento
+                      <input type={"radio"} name="objetivo" className={`inputStyled`} id='E' value={"E"} style={{marginRight:'10px'}} />Emagracimento
                     </label>
                   </div>
               </FormArea>
