@@ -40,12 +40,23 @@ const Hipertrophy = (data) => {
         min: data.peso * 1.6,
         max: data.peso * 2.2,
     };
+
     const fat = data.peso;
 
-    const carbo = data.peso * 4;
+    const basalCarboCalculation = (proteins) => {
+        return (caloricExpenditure - ((proteins * 4) + (fat * 9))) / 4;
+    };
+
+    const carbo = {
+        min: basalCarboCalculation(proteins.min),
+        max: basalCarboCalculation(proteins.max),
+    };
 
     console.log("TMB",metabolicRate);
     console.log("GASTO",caloricExpenditure);
+    console.log("PRoteínas:",proteins);
+    console.log("Gorduras:",fat);
+    console.log("Carbo:",carbo);
 }
 
 const Slimming = (data) => {
