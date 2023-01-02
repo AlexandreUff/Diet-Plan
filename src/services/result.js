@@ -37,19 +37,19 @@ const Hipertrophy = (data) => {
     const { metabolicRate, caloricExpenditure } = getCaloricExpenditure(data);
 
     const proteins = {
-        min: data.peso * 1.6,
-        max: data.peso * 2.2,
+        min: Math.round(data.peso * 1.6),
+        max: Math.round(data.peso * 2.2),
     };
 
     const fat = data.peso;
 
     const basalCarboCalculation = (proteins) => {
-        return (caloricExpenditure - ((proteins * 4) + (fat * 9))) / 4;
+        return Math.round((caloricExpenditure - ((proteins * 4) + (fat * 9))) / 4);
     };
 
     const carbo = {
-        min: basalCarboCalculation(proteins.min),
-        max: basalCarboCalculation(proteins.max),
+        min: basalCarboCalculation(proteins.max),
+        max: basalCarboCalculation(proteins.min),
     };
 
     console.log("TMB",metabolicRate);
@@ -61,6 +61,19 @@ const Hipertrophy = (data) => {
 
 const Slimming = (data) => {
     console.log("Emagrecimento",data);
+
+    const { metabolicRate, caloricExpenditure } = getCaloricExpenditure(data);
+
+    const macroNutrientsCalc = (percentage, calories) => Math.round((caloricExpenditure * (percentage / 100)) / calories);
+
+    const proteins = macroNutrientsCalc(40,4);
+    
+    const carbo = macroNutrientsCalc(40,4);
+
+    const fat = macroNutrientsCalc(20,9);
+
+    console.log("p,c,f:",proteins,carbo,fat);
+
     console.log("TMB",getCaloricExpenditure(data));
 }
 
@@ -69,7 +82,7 @@ export default function Result(peso,estatura, idade, atividade, sexo, objetivo){
         console.log("estatura",estatura.value);
         console.log("idade",idade.value);
         console.log("atividade",atividade.value);
-        console.log("sexo 0",sexo[0].checked/*  ? sexo[0].checked : sexo[1].checked */);
+        console.log("sexo 0",sexo[0].checked);
         console.log("sexo 1",sexo[1].checked);
         console.log("objetivo 0",objetivo[0].checked);
         console.log("objetivo 1",objetivo[1].checked);
