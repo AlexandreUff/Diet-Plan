@@ -1,9 +1,14 @@
-import React from "react";
-import CardData from './components/CardData';
-import FormArea from './components/FormArea';
-import { GitHubIco, InstagramIco, LinkedInIco, MainIco } from './components/Icons';
+import React, {useState} from "react";
+import CardData from '../components/CardData';
+import FormArea from '../components/FormArea';
+
 
 export default function Home() {
+
+    const [peso,setPeso] = useState(null);
+    const [estatura,setEstatura] = useState(null);
+    const [idade,setIdade] = useState(null);
+
     return <CardData>
         <FormArea>
             <h2>Olá! Seja muito bem-vindo!</h2>

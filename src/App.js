@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+import Home from './pages/Home';
 import CardData from './components/CardData';
 import FormArea from './components/FormArea';
 /* import './App.css'; */
@@ -18,7 +24,12 @@ export default function App(){
         </header>
 
         <main>
-          <CardData>
+          <Router>
+            <Routes>
+              <Route index element={<Home />} />
+            </Routes>
+          </Router>
+          {/* <CardData>
               <FormArea>
                 <h2>Olá! Seja muito bem-vindo!</h2>
                 <p>
@@ -111,7 +122,7 @@ export default function App(){
                     </label>
                   </div>
               </FormArea>
-          </CardData>
+          </CardData> */}
         </main>
         
         <footer>
