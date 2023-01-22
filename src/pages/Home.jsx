@@ -1,13 +1,32 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
+import { Link } from "react-router-dom";
 import CardData from '../components/CardData';
 import FormArea from '../components/FormArea';
 
 
-export default function Home() {
+export default function Home(props) {
 
     const [peso,setPeso] = useState(null);
     const [estatura,setEstatura] = useState(null);
     const [idade,setIdade] = useState(null);
+
+    const [url, setUrl] = useState("");
+
+    const isFirstRender = useRef(true);
+
+    useEffect(()=>{
+        if(isFirstRender.current){
+            isFirstRender.current = false
+            return;
+        }
+
+        console.log("Bateu")
+        props.func(url);
+        setTimeout(()=>{
+
+            location.href = `/result/${url}`
+        },2000)
+    },[url])
 
     return <CardData>
         <FormArea>
@@ -16,6 +35,13 @@ export default function Home() {
                 Aqui você poderá descobrir com detalhes qual é a sua taxa de matabolismo basal e
                 qual o consumo ideal de macronutrientes indicados para seu objetivo, seja
                 emagracimento ou hipertrofia muscular.
+                    
+                <div /* onClick={() => {
+                    setUrl("pegou")
+                    }} */>
+                    <Link to={`/result/23/55`} >Clique</Link>
+                    LINK
+                </div>
             </p>
         </FormArea>
         <FormArea>

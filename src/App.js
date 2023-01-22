@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './pages/Home';
+import Result from './pages/Result';
 import CardData from './components/CardData';
 import FormArea from './components/FormArea';
 /* import './App.css'; */
@@ -12,9 +13,7 @@ import { GitHubIco, InstagramIco, LinkedInIco, MainIco } from './components/Icon
 
 export default function App(){
 
-  const [peso,setPeso] = useState(null);
-  const [estatura,setEstatura] = useState(null);
-  const [idade,setIdade] = useState(null);
+  const [getUrl, setGetUrl] = useState("");
 
   return (
     <div className='main-background'>
@@ -26,7 +25,11 @@ export default function App(){
         <main>
           <Router>
             <Routes>
-              <Route index element={<Home />} />
+              <Route index element={<Home func={(url)=>{setGetUrl(url)
+              setTimeout(()=>console.log("getUrl:",getUrl),1000)}} />} />
+              <Route path={`/result/:protein/:carbo`} element={<Result />} />
+
+              {/* https://www.linkedin.com/pulse/react-router-dom-par%C3%A2metros-ronni-oliveira/?originalSubdomain=pt */}
             </Routes>
           </Router>
           {/* <CardData>
