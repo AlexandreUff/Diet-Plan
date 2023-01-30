@@ -2,9 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 export default function Result(){
-    const {protein, carbo} = useParams();
+    const {proteinMin, proteinMax, carboMin, carboMax, fat, metabolicRate, caloricExpenditure} = useParams();
 
-    return <div style={{background:'red'}}>
-        Resultado {protein} {carbo}!
+    console.log("DADOS:",proteinMin, proteinMax, carboMin, carboMax, fat, metabolicRate, caloricExpenditure)
+
+    return <div style={{background:'red', fontSize:'30px'}}>
+        Resultado {proteinMin} {proteinMax} {carboMin} {carboMax} {fat} {metabolicRate} {caloricExpenditure}!
     </div>
 }

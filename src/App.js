@@ -27,7 +27,7 @@ export default function App(){
             <Routes>
               <Route index element={<Home func={(url)=>{setGetUrl(url)
               setTimeout(()=>console.log("getUrl:",getUrl),1000)}} />} />
-              <Route path={`/result/:protein/:carbo`} element={<Result />} />
+              <Route path={`/result/:proteinMin/:proteinMax/:carboMin/:carboMax/:fat/:metabolicRate/:caloricExpenditure`} element={<Result />} />
 
               {/* https://www.linkedin.com/pulse/react-router-dom-par%C3%A2metros-ronni-oliveira/?originalSubdomain=pt */}
             </Routes>

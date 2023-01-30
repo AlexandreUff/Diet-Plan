@@ -1,6 +1,7 @@
 import react, { useEffect, useState } from "react";
 import { ArrowBackIcon, ArrowNextIcon, CheckDoneIcon } from "./Icons";
 import Result from "../services/result";
+import { redirect } from "react-router-dom";
 
 const inputFocus = document.querySelectorAll("[inputStyled]");
 
@@ -38,7 +39,27 @@ export default function CardData(props){
         const sexo = document.getElementsByName("sexo");
         const objetivo = document.getElementsByName("objetivo");
 
-        Result(peso,estatura, idade, atividade, sexo, objetivo)
+        const result = Result(peso,estatura, idade, atividade, sexo, objetivo)
+        console.log("RESULTADO FINAL", result);
+
+        const setToResultView = (...datas) => {
+
+            const urlDatas = datas.reduce((acc, data) => acc+`/${data}`,'')
+
+            window.location = `/result${urlDatas}`
+        }
+
+        setToResultView(
+            result.proteins.min,
+            result.proteins.max,
+            result.carbo.min,
+            result.carbo.max,
+            result.fat,
+            result.metabolicRate,
+            result.caloricExpenditure
+        );
+
+        /* window.location = `/result/${result.proteins.min}/${result.proteins.max}/${result.carbo.min}/${result.carbo.max}/${result.fat}/${result.metabolicRate}/${result.caloricExpenditure}` */
 
         /* console.log("Peso",peso.value);
         console.log("estatura",estatura.value);

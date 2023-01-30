@@ -1,5 +1,3 @@
-import React from "react";
-
 const getCaloricExpenditure = (data)=>{
     const male = 66+(13.7*data.peso)+(5*data.estatura)-(6.8*data.idade);
     const female = 655+(9.6*data.peso)+(1.8*data.estatura)-(4.7*data.idade);
@@ -57,6 +55,14 @@ const Hipertrophy = (data) => {
     console.log("PRoteínas:",proteins);
     console.log("Gorduras:",fat);
     console.log("Carbo:",carbo);
+
+    return {
+    metabolicRate,
+    caloricExpenditure,
+    proteins,
+    carbo,
+    fat,
+    }
 }
 
 const Slimming = (data) => {
@@ -75,6 +81,14 @@ const Slimming = (data) => {
     console.log("p,c,f:",proteins,carbo,fat);
 
     console.log("TMB",getCaloricExpenditure(data));
+
+    return {
+        metabolicRate,
+        caloricExpenditure,
+        proteins,
+        carbo,
+        fat,
+        }
 }
 
 export default function Result(peso,estatura, idade, atividade, sexo, objetivo){
@@ -96,8 +110,8 @@ export default function Result(peso,estatura, idade, atividade, sexo, objetivo){
         }
 
         if(objetivo[0].checked){
-            Hipertrophy(userData);
+            return Hipertrophy(userData);
         } else if(objetivo[1].checked){
-            Slimming(userData);
+            return Slimming(userData);
         }
 }

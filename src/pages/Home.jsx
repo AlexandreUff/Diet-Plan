@@ -1,32 +1,14 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import CardData from '../components/CardData';
 import FormArea from '../components/FormArea';
 
 
-export default function Home(props) {
+export default function Home() {
 
     const [peso,setPeso] = useState(null);
     const [estatura,setEstatura] = useState(null);
     const [idade,setIdade] = useState(null);
-
-    const [url, setUrl] = useState("");
-
-    const isFirstRender = useRef(true);
-
-    useEffect(()=>{
-        if(isFirstRender.current){
-            isFirstRender.current = false
-            return;
-        }
-
-        console.log("Bateu")
-        props.func(url);
-        setTimeout(()=>{
-
-            location.href = `/result/${url}`
-        },2000)
-    },[url])
 
     return <CardData>
         <FormArea>
@@ -39,7 +21,7 @@ export default function Home(props) {
                 <div /* onClick={() => {
                     setUrl("pegou")
                     }} */>
-                    <Link to={`/result/23/55`} >Clique</Link>
+                    <Link to={`/result/50/100/55/110/45/1800/2300`} >Clique</Link>
                     LINK
                 </div>
             </p>
