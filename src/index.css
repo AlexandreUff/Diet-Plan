@@ -120,6 +120,53 @@
   width: 90%;
   height: 35px;
 }
+.main-background .background-effect main .result-main {
+  backdrop-filter: blur(6.5px);
+  background-color: rgba(255, 255, 255, 0.095);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+}
+.main-background .background-effect main .result-main h2 {
+  text-align: center;
+}
+.main-background .background-effect main .result-main .macros-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.main-background .background-effect main .result-main .macros-show .macro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.095);
+  font-size: 30px;
+  height: 150px;
+  width: 200px;
+  overflow: hidden;
+}
+.main-background .background-effect main .result-main .macros-show .macro .data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: inherit;
+  flex-grow: 1;
+}
+.main-background .background-effect main .result-main .macros-show .macro .data p {
+  margin-top: 15px;
+}
+.main-background .background-effect main .result-main .macros-show .macro .macro-name {
+  background-color: rgba(255, 255, 255, 0.095);
+  width: 115%;
+  padding-bottom: 5px;
+  font-size: inherit;
+}
 .main-background .background-effect footer {
   display: flex;
   justify-content: space-between;

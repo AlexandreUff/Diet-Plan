@@ -18,12 +18,12 @@ export default function Home() {
                 qual o consumo ideal de macronutrientes indicados para seu objetivo, seja
                 emagracimento ou hipertrofia muscular.
                     
-                <div /* onClick={() => {
+                {/* <div onClick={() => {
                     setUrl("pegou")
-                    }} */>
+                    }}>
                     <Link to={`/result/50/100/55/110/45/1800/2300`} >Clique</Link>
                     LINK
-                </div>
+                </div> */}
             </p>
         </FormArea>
         <FormArea>
