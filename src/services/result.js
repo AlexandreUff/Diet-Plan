@@ -1,25 +1,25 @@
 const getCaloricExpenditure = (data)=>{
-    const male = 66+(13.7*data.peso)+(5*data.estatura)-(6.8*data.idade);
+    const male = 66+(13.7*data.peso)+(5*data.estatura)-(6.8*data.idade)
     const female = 655+(9.6*data.peso)+(1.8*data.estatura)-(4.7*data.idade);
 
     let caloricExpenditure;
-    let metabolicRate = data.sexo === "masc" ? male : female;
+    let metabolicRate = data.sexo === "masc" ? +male.toFixed(2) : +female.toFixed(2);
 
     switch(data.atividade){
         case "nad":
-            caloricExpenditure = metabolicRate * 1.2
+            caloricExpenditure = +(metabolicRate * 1.2).toFixed(2)
             break;
         case "lev":
-            caloricExpenditure = metabolicRate * 1.375
+            caloricExpenditure = +(metabolicRate * 1.375).toFixed(2)
             break;
         case "mod":
-            caloricExpenditure = metabolicRate * 1.55
+            caloricExpenditure = +(metabolicRate * 1.55).toFixed(2)
             break;
         case "alt":
-            caloricExpenditure = metabolicRate * 1.725
+            caloricExpenditure = +(metabolicRate * 1.725).toFixed(2)
             break;
         case "ext":
-            caloricExpenditure = metabolicRate * 1.9
+            caloricExpenditure = +(metabolicRate * 1.9).toFixed(2)
             break;
     }
 
@@ -39,7 +39,7 @@ const Hipertrophy = (data) => {
         max: Math.round(data.peso * 2.2),
     };
 
-    const fat = data.peso;
+    const fat = Math.floor(data.peso);
 
     const basalCarboCalculation = (proteins) => {
         return Math.round((caloricExpenditure - ((proteins * 4) + (fat * 9))) / 4);

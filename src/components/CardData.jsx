@@ -50,6 +50,7 @@ export default function CardData(props){
         }
 
         setToResultView(
+            atividade.value,
             result.proteins.min,
             result.proteins.max,
             result.carbo.min,

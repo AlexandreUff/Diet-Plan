@@ -17,13 +17,6 @@ export default function Home() {
                 Aqui você poderá descobrir com detalhes qual é a sua taxa de matabolismo basal e
                 qual o consumo ideal de macronutrientes indicados para seu objetivo, seja
                 emagracimento ou hipertrofia muscular.
-                    
-                {/* <div onClick={() => {
-                    setUrl("pegou")
-                    }}>
-                    <Link to={`/result/50/100/55/110/45/1800/2300`} >Clique</Link>
-                    LINK
-                </div> */}
             </p>
         </FormArea>
         <FormArea>

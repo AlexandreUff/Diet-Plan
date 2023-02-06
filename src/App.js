@@ -27,7 +27,7 @@ export default function App(){
             <Routes>
               <Route index element={<Home func={(url)=>{setGetUrl(url)
               setTimeout(()=>console.log("getUrl:",getUrl),1000)}} />} />
-              <Route path={`/result/:proteinMin/:proteinMax/:carboMin/:carboMax/:fat/:metabolicRate/:caloricExpenditure`} element={<Result />} />
+              <Route path={`/result/:atividade/:proteinMin/:proteinMax/:carboMin/:carboMax/:fat/:metabolicRate/:caloricExpenditure`} element={<Result />} />
 
               {/* https://www.linkedin.com/pulse/react-router-dom-par%C3%A2metros-ronni-oliveira/?originalSubdomain=pt */}
             </Routes>
@@ -143,7 +143,7 @@ export default function App(){
             </ul>
           </nav>
           <p>Créditos Imagens: "Jão"</p>
-          <p>&copy; 2022  - Alexanddre Magno Dias</p>
+          <p>&copy; 2022  - Alexandre Magno Dias</p>
         </footer>
       </div>
     </div>
