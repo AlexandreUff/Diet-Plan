@@ -23,7 +23,7 @@ export default function Result(){
 
     return (
     <div className="result-main">
-        <h2>Segue uma sugestão para o seu consumo diário de macronutrientes:</h2>
+        <h2>Segue uma sugestão para o seu consumo diário de macronutrientes.:</h2>
         <section className="macros-show">
             <div className="macro">
                 <div className="data">
