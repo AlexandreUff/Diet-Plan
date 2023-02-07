@@ -336,6 +336,12 @@ $fourthColor: #BAFFB4;
     }
 }
 
+@media(max-width:510px){
+    .result-main{
+        margin-bottom: 20px;
+    }
+}
+
 @media(max-width:620px){
     .main-background{
         .background-effect{
@@ -366,6 +372,8 @@ $fourthColor: #BAFFB4;
 
 @media(max-width:480px){
     .main-background{
+        height: 120vh;
+
         .background-effect{
             main {
                 .card-ground{
@@ -378,7 +386,7 @@ $fourthColor: #BAFFB4;
 
 @media(max-width:400px){
     .main-background{
-        height: 100%;
+        height: 150vh;
     }
 }
 
