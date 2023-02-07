@@ -243,6 +243,11 @@
     margin-bottom: 10px;
   }
 }
+@media (max-height: 740px) {
+  .main-background {
+    height: 740px;
+  }
+}
 @media (max-width: 650px) {
   .main-background .background-effect main .card-ground {
     height: 200px;
