@@ -163,6 +163,7 @@
   justify-content: center;
   font-size: inherit;
   flex-grow: 1;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.453);
 }
 .main-background .background-effect main .result-main .macros-show .macro .data p {
   margin-top: 15px;
@@ -265,9 +266,14 @@
     border-radius: 0px;
   }
 }
-@media (max-width: 470px) {
+@media (max-width: 480px) {
   .main-background .background-effect main .card-ground {
     height: 250px;
+  }
+}
+@media (max-width: 400px) {
+  .main-background {
+    height: 100%;
   }
 }
 @keyframes grow-decrease {
