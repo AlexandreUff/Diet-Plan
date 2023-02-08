@@ -21,6 +21,12 @@ export default function Result(){
         }
     }
 
+    const middleMacro = (min, max) => {
+        const calcResult = +min+(+max-(+min))/2;
+
+        return Math.trunc(calcResult);
+    }
+
     return (
     <div className="result-main">
         <h2>Segue uma sugestão para o seu consumo diário de macronutrientes.:</h2>
@@ -54,9 +60,22 @@ export default function Result(){
             </div>
         </section>
         <section className="info-conclusion">
-            Com um Metabolismo Basal de {metabolicRate} kcal e um nível de atividade de grau {`${degreeOfActivity()}`}, seu gasto diário médio de calorias é de <strong>{caloricExpenditure} kcal</strong>.
-            <br />
-            Para compensar todo esse gasto calórico...
+            <p>Com um Metabolismo Basal de {metabolicRate} kcal e um nível de atividade de grau {`${degreeOfActivity()}`}, seu gasto diário médio de calorias é de <strong>{caloricExpenditure} kcal</strong>.</p>
+
+            <p>Os macronutrientes sugeridos acima, se consumidos corretamente, compensarão a quantidade de calorias gastas diariamente e, com isso, garantirão {`uma melhor hipertrofia : um melhor emagrecimento`}.</p>
+
+            <br /> 
+
+            <p className="observation">Obs: Se você optar pelo valor mínimo de proteínas ({`minProtein`}g), seu consumo de carboidratos deve ser inversamente proporcional. Ou seja, carboidratros com valor máximo ({`maxCarbo`}g).</p>
+
+            <p className="exemple">
+                Ex.:
+                <ul>
+                    <li>Consumo de {proteinMin}g de proteínas = Consumo de {carboMax}g de carboidratos;</li>
+                    <li>Consumo de {middleMacro(proteinMin,proteinMax)}g de proteínas = Consumo de {middleMacro(carboMin,carboMax)}g de carboidratos;</li>
+                    <li>Consumo de {proteinMax}g de proteínas = Consumo de {carboMin}g de carboidratos.</li>
+                </ul>
+            </p>
         </section>
     </div>
     )

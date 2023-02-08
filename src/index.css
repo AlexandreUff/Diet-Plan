@@ -175,7 +175,11 @@
   font-size: inherit;
 }
 .main-background .background-effect main .result-main .info-conclusion {
+  font-size: 3rem;
   margin-top: 20px;
+}
+.main-background .background-effect main .result-main .info-conclusion ul {
+  font-size: 3rem;
 }
 .main-background .background-effect footer {
   display: flex;
