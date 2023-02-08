@@ -66,7 +66,7 @@ export default function Result(){
 
             <br /> 
 
-            <p className="observation">Obs: Se você optar pelo valor mínimo de proteínas ({`minProtein`}g), seu consumo de carboidratos deve ser inversamente proporcional. Ou seja, carboidratros com valor máximo ({`maxCarbo`}g).</p>
+            <p className="observation">Obs: Se você optar pelo valor mínimo de proteínas ({proteinMin}g), seu consumo de carboidratos deve ser inversamente proporcional. Ou seja, carboidratros com valor máximo ({carboMax}g).</p>
 
             <p className="exemple">
                 Ex.:
