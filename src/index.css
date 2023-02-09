@@ -9,15 +9,18 @@
 .main-background {
   background-image: url("../public/backgrounds/pexels-victor-freitas-949126.jpg");
   background-size: 100%;
-  height: 100vh;
+  min-height: 100vh;
   letter-spacing: 5px;
   font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 .main-background .background-effect {
   background-image: linear-gradient(rgba(255, 255, 255, 0), black);
   height: 100%;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 .main-background .background-effect header {
   display: flex;
@@ -28,7 +31,6 @@
 .main-background .background-effect header svg {
   width: 150px;
   margin-right: 25px;
-  /* text-shadow: 5px 5px 5px black; */
   animation-name: grow-decrease;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -248,11 +250,11 @@
     margin-bottom: 10px;
   }
 }
-@media (max-height: 740px) {
-  .main-background {
-    height: 740px;
-  }
-}
+/* @media(max-height:740px){
+    .main-background {
+        height: 740px;
+    }
+} */
 @media (max-width: 650px) {
   .main-background .background-effect main .card-ground {
     height: 200px;
@@ -283,17 +285,17 @@
 }
 @media (max-width: 480px) {
   .main-background {
-    height: 120vh;
+    /* height: 120vh; */
   }
   .main-background .background-effect main .card-ground {
     height: 250px;
   }
 }
-@media (max-width: 400px) {
-  .main-background {
-    height: 150vh;
-  }
-}
+/* @media(max-width:400px){
+    .main-background{
+        height: 150vh;
+    }
+} */
 @keyframes grow-decrease {
   to {
     transform: scale(1.2);
