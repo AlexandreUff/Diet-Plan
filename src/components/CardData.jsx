@@ -38,6 +38,7 @@ export default function CardData(props){
         const atividade = document.getElementById("atividade");
         const sexo = document.getElementsByName("sexo");
         const objetivo = document.getElementsByName("objetivo");
+        const objChecked = objetivo[0].checked ? objetivo[0].value : objetivo[1].value
 
         const result = Result(peso,estatura, idade, atividade, sexo, objetivo)
         console.log("RESULTADO FINAL", result);
@@ -49,16 +50,30 @@ export default function CardData(props){
             window.location = `/result${urlDatas}`
         }
 
-        setToResultView(
-            atividade.value,
-            result.proteins.min,
-            result.proteins.max,
-            result.carbo.min,
-            result.carbo.max,
-            result.fat,
-            result.metabolicRate,
-            result.caloricExpenditure
-        );
+        if(objChecked === "H"){
+            setToResultView(
+                objChecked,
+                atividade.value,
+                result.proteins.min,
+                result.proteins.max,
+                result.carbo.min,
+                result.carbo.max,
+                result.fat,
+                result.metabolicRate,
+                result.caloricExpenditure
+            );
+        } else if (objChecked === "E"){
+            setToResultView(
+                objChecked,
+                atividade.value,
+                result.proteins,
+                result.carbo,
+                result.fat,
+                result.metabolicRate,
+                result.caloricExpenditure
+            );
+        }
+
 
         /* window.location = `/result/${result.proteins.min}/${result.proteins.max}/${result.carbo.min}/${result.carbo.max}/${result.fat}/${result.metabolicRate}/${result.caloricExpenditure}` */
 
