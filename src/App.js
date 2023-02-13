@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Home from './pages/Home';
 import Result from './pages/Result';
+import ResultSmilling from './pages/ResultSmilling';
 import CardData from './components/CardData';
 import FormArea from './components/FormArea';
 /* import './App.css'; */
@@ -28,7 +29,7 @@ export default function App(){
               <Route index element={<Home func={(url)=>{setGetUrl(url)
               setTimeout(()=>console.log("getUrl:",getUrl),1000)}} />} />
               <Route path={`/result/:obj/:atividade/:proteinMin/:proteinMax/:carboMin/:carboMax/:fat/:metabolicRate/:caloricExpenditure`} element={<Result />} />
-              <Route path={`/result/:obj/:atividade/:protein/:carbo/:fat/:metabolicRate/:caloricExpenditure`} element={<Result />} />
+              <Route path={`/result/:obj/:atividade/:protein/:carbo/:fat/:metabolicRate/:caloricExpenditure`} element={<ResultSmilling />} />
             </Routes>
           </Router>
         </main>
