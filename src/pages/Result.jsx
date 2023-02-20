@@ -60,20 +60,28 @@ export default function Result(){
             </div>
         </section>
         <section className="info-conclusion">
-            <p>Com um Metabolismo Basal de {metabolicRate} kcal e um nível de atividade de grau {`${degreeOfActivity()}`}, seu gasto diário médio de calorias é de <strong>{caloricExpenditure} kcal</strong>.</p>
+            <p>Com um Metabolismo Basal de <strong>{metabolicRate} kcal</strong> e um nível de atividade de grau {`${degreeOfActivity()}`}, seu gasto diário médio de calorias é de <strong>{caloricExpenditure} kcal</strong>.</p>
 
-            <p>Os macronutrientes sugeridos acima, se consumidos corretamente, compensarão a quantidade de calorias gastas diariamente e, com isso, garantirão {`uma melhor hipertrofia : um melhor emagrecimento`}.</p>
+            <p>Os macronutrientes sugeridos acima, se consumidos corretamente, compensarão a quantidade de calorias gastas diariamente e, com isso, garantirão uma melhor hipertrofia.</p>
 
             <br /> 
 
-            <p className="observation">Obs: Se você optar pelo valor mínimo de proteínas ({proteinMin}g), seu consumo de carboidratos deve ser inversamente proporcional. Ou seja, carboidratros com valor máximo ({carboMax}g).</p>
+            <p className="observation">
+                Obs: O seu consumo de carboidratos é definido inversamente proporcional conforme a quantidade de proteínas que ingerir. Ou seja, se você consome o valor máximo de proteínas ({proteinMax}g), deve consumir o mínimo de carboidratos ({carboMin}g). Caso consuma o minimo de proteínas ({proteinMin}g), deve consumir o máximo de carboidratos ({carboMax}g).
+
+                <br />
+                
+                A variação de valor máximo e mínimo entre ambos macronutrientes citados acima é de 59g, o que significa que para cada grama de proteína que for ingerir, dentro dessa margem, é uma grama a menos de carboidrato.
+            </p>
+
+            <br />
 
             <p className="exemple">
                 Ex.:
                 <ul>
-                    <li>Consumo de {proteinMin}g de proteínas = Consumo de {carboMax}g de carboidratos;</li>
-                    <li>Consumo de {middleMacro(proteinMin,proteinMax)}g de proteínas = Consumo de {middleMacro(carboMin,carboMax)}g de carboidratos;</li>
-                    <li>Consumo de {proteinMax}g de proteínas = Consumo de {carboMin}g de carboidratos.</li>
+                    <li>Consumo mínimo de proteínas ({proteinMin}g) = Consumo máximo de carboidrátros ({carboMax}g);</li>
+                    <li>Consumo médio de proteínas ({middleMacro(proteinMin,proteinMax)}g) = Consumo médio de carboidratos ({middleMacro(carboMin,carboMax)}g);</li>
+                    <li>Consumo máximo de proteínas ({proteinMax}g) = Consumo mínimo de carboidratos ({carboMin}g).</li>
                 </ul>
             </p>
         </section>

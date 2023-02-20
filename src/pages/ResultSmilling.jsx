@@ -54,9 +54,9 @@ export default function ResultSmilling(){
             </div>
         </section>
         <section className="info-conclusion">
-            <p>Com um Metabolismo Basal de {metabolicRate} kcal e um nível de atividade de grau {`${degreeOfActivity()}`}, seu gasto diário médio de calorias é de <strong>{caloricExpenditure} kcal</strong>.</p>
+            <p>Com um Metabolismo Basal de <strong>{metabolicRate}</strong> kcal e um nível de atividade de grau {`${degreeOfActivity()}`}, seu gasto diário médio de calorias é de <strong>{caloricExpenditure} kcal</strong>.</p>
 
-            <p>Os macronutrientes sugeridos acima, se consumidos corretamente, compensarão a quantidade de calorias gastas diariamente e, com isso, garantirão {`uma melhor hipertrofia : um melhor emagrecimento`}.</p>
+            <p>Os macronutrientes sugeridos acima, se consumidos corretamente, compensarão a quantidade de calorias gastas diariamente e, com isso, garantirão um melhor emagrecimento.</p>
 
             <br /> 
 

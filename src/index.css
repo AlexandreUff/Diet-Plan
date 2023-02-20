@@ -131,6 +131,7 @@
   padding: 15px;
   font-size: 30px;
   width: 70%;
+  margin-bottom: 50px;
 }
 .main-background .background-effect main .result-main h2 {
   text-align: center;
@@ -183,6 +184,9 @@
 .main-background .background-effect main .result-main .info-conclusion ul {
   font-size: 3rem;
   padding: 10px 25px;
+}
+.main-background .background-effect main .result-main .info-conclusion strong {
+  font-size: inherit;
 }
 .main-background .background-effect footer {
   display: flex;
