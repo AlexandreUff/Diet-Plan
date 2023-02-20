@@ -52,7 +52,6 @@ export default function CardData(props){
 
         if(objChecked === "H"){
             setToResultView(
-                objChecked,
                 atividade.value,
                 result.proteins.min,
                 result.proteins.max,
@@ -64,7 +63,6 @@ export default function CardData(props){
             );
         } else if (objChecked === "E"){
             setToResultView(
-                objChecked,
                 atividade.value,
                 result.proteins,
                 result.carbo,

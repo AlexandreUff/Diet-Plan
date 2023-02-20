@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 export default function ResultSmilling(){
-    const {obj,atividade, protein, carbo, fat, metabolicRate, caloricExpenditure} = useParams();
+    const {atividade, protein, carbo, fat, metabolicRate, caloricExpenditure} = useParams();
 
     console.log("DADOS:",protein, carbo, fat, metabolicRate, caloricExpenditure)
 

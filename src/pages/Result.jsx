@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 export default function Result(){
-    const {obj,atividade, proteinMin, proteinMax, carboMin, carboMax, fat, metabolicRate, caloricExpenditure} = useParams();
+    const {atividade, proteinMin, proteinMax, carboMin, carboMax, fat, metabolicRate, caloricExpenditure} = useParams();
 
     console.log("DADOS:",proteinMin, proteinMax, carboMin, carboMax, fat, metabolicRate, caloricExpenditure)
 

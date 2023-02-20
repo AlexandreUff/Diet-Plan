@@ -28,8 +28,8 @@ export default function App(){
             <Routes>
               <Route index element={<Home func={(url)=>{setGetUrl(url)
               setTimeout(()=>console.log("getUrl:",getUrl),1000)}} />} />
-              <Route path={`/result/:obj/:atividade/:proteinMin/:proteinMax/:carboMin/:carboMax/:fat/:metabolicRate/:caloricExpenditure`} element={<Result />} />
-              <Route path={`/result/:obj/:atividade/:protein/:carbo/:fat/:metabolicRate/:caloricExpenditure`} element={<ResultSmilling />} />
+              <Route path={`/result/:atividade/:proteinMin/:proteinMax/:carboMin/:carboMax/:fat/:metabolicRate/:caloricExpenditure`} element={<Result />} />
+              <Route path={`/result/:atividade/:protein/:carbo/:fat/:metabolicRate/:caloricExpenditure`} element={<ResultSmilling />} />
             </Routes>
           </Router>
         </main>
