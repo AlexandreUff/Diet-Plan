@@ -13,9 +13,10 @@ export default function CardData(props){
       const inputFocus = document.getElementsByClassName("inputStyled");
 
       inputFocus[posit*(-1)].addEventListener("keydown",(keyAction)=>{
+        keyAction.preventDefault()
         console.log(inputFocus[posit*(-1)])
-        inputFocus[posit*(-1)].value = `${keyAction.key}`
-        inputFocus[posit*(-1)+1].value = `${keyAction.key}`
+        inputFocus[posit*(-1)].value = `CHEGOU AQUI`
+        inputFocus[posit*(-1)+1].value = `CHEGOU AQUI`
         if(keyAction.key === 'Tab' || keyAction.key === ''){
             keyAction.preventDefault()
         }
