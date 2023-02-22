@@ -16,7 +16,7 @@ export default function CardData(props){
         console.log(inputFocus[posit*(-1)])
         inputFocus[posit*(-1)].value = `${keyAction.key}`
         inputFocus[posit*(-1)+1].value = `${keyAction.key}`
-        if(keyAction.key === 'Tab'){
+        if(keyAction.key === 'Tab' || keyAction.key === ''){
             keyAction.preventDefault()
         }
       })
