@@ -10,6 +10,9 @@ export default function CardData(props){
     const [posit,usePosit] = useState(0);
 
     useEffect(()=>{
+
+      console.log('POISIÇÃO ATUAL:',posit*(-1))
+
       const inputFocus = document.getElementsByClassName("inputStyled");
 
       inputFocus[posit*(-1)].addEventListener("keydown",(keyAction)=>{
@@ -21,8 +24,10 @@ export default function CardData(props){
       })
 
       inputFocus[posit*(-1)+1].addEventListener("focus",(event)=>{
-        inputFocus[posit*(-1)].value = `FOCUS`
-        inputFocus[posit*(-1)+1].value = `FOCUS`
+        inputFocus[posit*(-1)].value = `FOCUS 1`
+        inputFocus[posit*(-1)+1].value = `FOCUS 2`
+        inputFocus[posit*(-1)].focus()
+        console.log(event)
         event.preventDefault()
       })
 
