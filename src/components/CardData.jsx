@@ -23,16 +23,21 @@ export default function CardData(props){
         }
       })
 
+      inputFocus[posit*(-1)].addEventListener("focus",(event)=>{
+        console.log("Agora tem nada.");
+      })
+
       inputFocus[posit*(-1)+1].addEventListener("focus",(event)=>{
         /* inputFocus[posit*(-1)].value = `FOCUS 1`
         inputFocus[posit*(-1)+1].value = `FOCUS 2` */
-        inputFocus[posit*(-1)].focus()
+        inputFocus[posit*(-1)-1].focus()
         /* console.log(event) */
         event.preventDefault()
       })
 
       setTimeout(()=>{
         inputFocus[posit*(-1)-1].focus();
+        console.log("Bateu!")
       },1000)
     },[posit]);
 
