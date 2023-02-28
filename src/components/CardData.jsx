@@ -16,18 +16,18 @@ export default function CardData(props){
       const inputFocus = document.getElementsByClassName("inputStyled");
 
       inputFocus[posit*(-1)].addEventListener("keydown",(keyAction)=>{
-        inputFocus[posit*(-1)].value = `CHEGOU AQUI`
-        inputFocus[posit*(-1)+1].value = `CHEGOU AQUI`
+        /* inputFocus[posit*(-1)].value = `CHEGOU AQUI`
+        inputFocus[posit*(-1)+1].value = `CHEGOU AQUI` */
         if(keyAction.key === 'Tab'){
             keyAction.preventDefault()
         }
       })
 
       inputFocus[posit*(-1)+1].addEventListener("focus",(event)=>{
-        inputFocus[posit*(-1)].value = `FOCUS 1`
-        inputFocus[posit*(-1)+1].value = `FOCUS 2`
+        /* inputFocus[posit*(-1)].value = `FOCUS 1`
+        inputFocus[posit*(-1)+1].value = `FOCUS 2` */
         inputFocus[posit*(-1)].focus()
-        console.log(event)
+        /* console.log(event) */
         event.preventDefault()
       })
 
