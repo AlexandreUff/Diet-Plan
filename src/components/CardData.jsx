@@ -13,26 +13,35 @@ export default function CardData(props){
 
       console.log('POISIÇÃO ATUAL:',posit*(-1))
 
-      const inputFocus = document.getElementsByClassName("inputStyled");
+      const inputsNodeElements = document.getElementsByClassName("inputStyled");
 
-      inputFocus[posit*(-1)].addEventListener("keydown",(keyAction)=>{
-        /* inputFocus[posit*(-1)].value = `CHEGOU AQUI`
-        inputFocus[posit*(-1)+1].value = `CHEGOU AQUI` */
+      /* Converte para um formato de array */
+      const inputFocus = [...inputsNodeElements];
+
+      /* Talvez volte */
+      /* inputFocus[posit*(-1)].addEventListener("keydown",(keyAction)=>{
         if(keyAction.key === 'Tab'){
             keyAction.preventDefault()
         }
-      })
+      }) */
 
-      inputFocus[posit*(-1)].addEventListener("focus",(event)=>{
+      console.log(inputFocus)
+
+      console.log("INDICE ELEM. FOCADO",inputFocus.indexOf(inputFocus[posit*(-1)-1]))
+
+      /* inputFocus[posit*(-1)].addEventListener("focus",(event)=>{
         console.log("Agora tem nada.");
-      })
+      }) */
 
       inputFocus[posit*(-1)+1].addEventListener("focus",(event)=>{
-        /* inputFocus[posit*(-1)].value = `FOCUS 1`
-        inputFocus[posit*(-1)+1].value = `FOCUS 2` */
-        inputFocus[posit*(-1)-1].focus()
-        /* console.log(event) */
-        event.preventDefault()
+        console.log("CHEGOU AQUI",event.target.id)
+        if(posit*(-1) !== inputFocus.indexOf(event.target)+1){
+            console.log("diferentes:",posit*(-1),inputFocus.indexOf(event.target))
+            inputFocus[posit*(-1)].focus()
+            event.preventDefault()
+
+        }
+
       })
 
       setTimeout(()=>{
@@ -40,6 +49,7 @@ export default function CardData(props){
         console.log("Bateu!")
       },1000)
     },[posit]);
+
 
     function buttonName(cardSize){
       if (cardSize-1 > posit*(-1)) {
