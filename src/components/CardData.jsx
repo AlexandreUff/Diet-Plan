@@ -29,6 +29,8 @@ export default function CardData(props){
 
       console.log("INDICE ELEM. FOCADO",inputFocus.indexOf(inputFocus[posit*(-1)-1]))
 
+      console.log("ELEMENTO",inputFocus[posit*(-1)-1]);
+
       /* inputFocus[posit*(-1)].addEventListener("focus",(event)=>{
         console.log("Agora tem nada.");
       }) */
@@ -45,6 +47,8 @@ export default function CardData(props){
       }) */
 
       setTimeout(()=>{
+        inputFocus[posit*(-1)].disabled = true;
+        inputFocus[posit*(-1)-1].disabled = false;
         inputFocus[posit*(-1)-1].focus();
         console.log("Bateu!")
       },1000)
