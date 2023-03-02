@@ -46,6 +46,7 @@ export default function Home() {
                         className={`inputStyled`}
                         placeholder={"Ex.: 185 cm"}
                         value={estatura}
+                        disabled
                     />
                     {"cm"}
                 </div>
@@ -62,6 +63,7 @@ export default function Home() {
                         className={`inputStyled`}
                         placeholder={"Ex.: 25 anos"}
                         value={idade}
+                        disabled
                     />
                     {"ano(s)"}
                 </div>
@@ -71,7 +73,7 @@ export default function Home() {
             <h2>Selecione seu nível de atividade</h2>
             <label>
                 <div style={{ height: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <select className={'inputStyled'} id="atividade">
+                    <select className={'inputStyled'} id="atividade" disabled>
                         <option value={"nad"}>Sedentário (Nenhum ou pouco exercício)</option>
                         <option value={"lev"}>Levemente ativo (1 a 3 dias de exercício por semana)</option>
                         <option value={"mod"}>Moderadamente ativo (3 a 5 dias de exercício por semana)</option>
@@ -85,10 +87,10 @@ export default function Home() {
             <h2>Marque a opção que corresponda a seu sexo:</h2>
             <div style={{ height: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center', justifyContent: 'space-evenly', borderTop: '1px solid gray' }}>
                 <label>
-                    <input type={"radio"} name="sexo" className={`inputStyled`} id='M' value={"M"} style={{ marginRight: '10px' }} />Masculino
+                    <input disabled type={"radio"} name="sexo" className={`inputStyled`} id='M' value={"M"} style={{ marginRight: '10px' }} />Masculino
                 </label>
                 <label>
-                    <input type={"radio"} name="sexo" className={`inputStyled`} id='F' value={"F"} style={{ marginRight: '10px' }} />Feminino
+                    <input disabled type={"radio"} name="sexo" className={`inputStyled`} id='F' value={"F"} style={{ marginRight: '10px' }} />Feminino
                 </label>
             </div>
         </FormArea>
@@ -96,10 +98,10 @@ export default function Home() {
             <h2>Por fim, qual o seu objetivo:</h2>
             <div style={{ height: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center', justifyContent: 'space-evenly', borderTop: '1px solid gray' }}>
                 <label>
-                    <input type={"radio"} name="objetivo" className={`inputStyled`} id='H' value={"H"} style={{ marginRight: '10px' }} />Hipertrofia
+                    <input disabled type={"radio"} name="objetivo" className={`inputStyled`} id='H' value={"H"} style={{ marginRight: '10px' }} />Hipertrofia
                 </label>
                 <label>
-                    <input type={"radio"} name="objetivo" className={`inputStyled`} id='E' value={"E"} style={{ marginRight: '10px' }} />Emagracimento
+                    <input disabled type={"radio"} name="objetivo" className={`inputStyled`} id='E' value={"E"} style={{ marginRight: '10px' }} />Emagracimento
                 </label>
             </div>
         </FormArea>

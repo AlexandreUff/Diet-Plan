@@ -33,7 +33,7 @@ export default function CardData(props){
         console.log("Agora tem nada.");
       }) */
 
-      inputFocus[posit*(-1)+1].addEventListener("focus",(event)=>{
+      /* inputFocus[posit*(-1)+1].addEventListener("focus",(event)=>{
         console.log("CHEGOU AQUI",event.target.id)
         if(posit*(-1) !== inputFocus.indexOf(event.target)+1){
             console.log("diferentes:",posit*(-1),inputFocus.indexOf(event.target))
@@ -42,7 +42,7 @@ export default function CardData(props){
 
         }
 
-      })
+      }) */
 
       setTimeout(()=>{
         inputFocus[posit*(-1)-1].focus();
